@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class="alert alert-primary" role="alert">
+     <form method="POST" action="">{% csrf_token %}
+     <div class="form-group">
+     <div class="">
+      {{ form.name| as_crispy_field }}
+     </div>
+     <div class="">
+      {{ form.title| as_crispy_field }}
+   </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6 ">
+        {{form.age | as_crispy_field}}
+     </div>
+       <div class="col ">
+       {{form.postion | as_crispy_field}}
+    </div>
+   </div>
+   <div class="row">
+     <div class="col ">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+   </div>
+  </div>
+  
+</form>
+{%endblock%}
